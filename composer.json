@@ -1,0 +1,24 @@
+{
+    "name": "coderatio/uploadia",
+    "description": "A flexible PHP file upload library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josiah Ovye Yahaya",
+            "email": "josiahoyahaya@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "Coderatio\\Uploadia\\Uploadia\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4"
+    }
+}
