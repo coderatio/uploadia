@@ -17,7 +17,8 @@ $uploadia->setDir('uploads')
     ->setExtensions(['jpg', 'png', 'jpeg', 'gif'])
     ->setMaxSize(1); // In megabytes. 1MB
     
-// There are several methods to use. e.g $uploadia->allowAllFormats(), $uploadia->sameName($bool) takes a boolean. e.t.c
+// There are several methods to use. e.g $uploadia->allowAllFormats()
+// $uploadia->sameName($bool) takes a boolean. e.t.c
     
 if($uploadia->uploadFile('photo') {
      // photo is the file input name.
