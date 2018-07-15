@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: user
- * Date: 12-Jul-18
- * Time: 7:38 AM
+ * Creator: Josiah O. Yahaya
+ * Email: josiahoyahaya@gmail.com
+ * License: MIT
+ * Copyright: All rights reserved @ coderatio
  */
 
 namespace Coderatio\Uploadia;
@@ -143,6 +143,8 @@ class Uploadia
                 $this->setMessage("Invalid file format !");
             }
 
+        } else {
+            $this->setMessage("No file selected");
         }
 
         return $result;
@@ -150,7 +152,7 @@ class Uploadia
 
     function selected($file)
     {
-        if ($_FILES[$file]['size'] > 0) {
+        if (isset($_FILES[$file]['name']) && $_FILES[$file]['size'] > 0) {
             return true;
         } else {
             return false;
