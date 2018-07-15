@@ -154,9 +154,9 @@ class Uploadia
     {
         if (isset($_FILES[$file]['name']) && $_FILES[$file]['size'] > 0) {
             return true;
-        } else {
-            return false;
-        }
+        } 
+        
+        return false;
     }
 
     function deleteUploaded()
