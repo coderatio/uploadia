@@ -18,6 +18,7 @@ class Uploadia
     public $allowAll;
     public $maxSize = 134217728;
     public $uploadName;
+    public $customName;
     public $sequence = '';
     public $name = 'Uploader';
     public $sameName = false;
@@ -49,6 +50,11 @@ class Uploadia
     {
         $this->extensions = $extensions;
 
+        return $this;
+    }
+
+    function setCustomName($customName) {
+        $this->customName = $customName;
         return $this;
     }
 
@@ -127,7 +133,9 @@ class Uploadia
             } else if ($this->allowAll || (!$this->allowAll && in_array($ext, $this->extensions))) {
 
                 if ($this->sameName == false) {
-                    $this->uploadName = $this->sequence . "_" . substr(md5(rand(1111, 9999)), 0, 8) . $this->getRandom() . rand(1111, 1000) . rand(99, 9999) . "." . $ext;
+                    $this->uploadName = (!isset($this->customName))
+                      ? $this->sequence . "_" . substr(md5(rand(1111, 9999)), 0, 8) . $this->getRandom() . rand(1111, 1000) . rand(99, 9999) . "." . $ext
+                      : $this->customName;
                 } else {
                     $this->uploadName = $name;
                 }
