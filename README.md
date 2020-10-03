@@ -15,7 +15,8 @@ require 'pathtouploadia/src/Uploadia.php';
 $uploadia = new Coderatio\Uploadia\Uploadia();
 $uploadia->setDir('uploads')
     ->setExtensions(['jpg', 'png', 'jpeg', 'gif'])
-    ->setMaxSize(1); // In megabytes. 1MB
+    ->setMaxSize(1) // In megabytes. 1MB
+    ->setCustomName('CUSTOM_FILE_NAME'); // specify custim file name (optional)
     
 // There are several methods to use. e.g $uploadia->allowAllFormats()
 // $uploadia->sameName($bool) takes a boolean. e.t.c
@@ -25,8 +26,9 @@ if($uploadia->uploadFile('photo') {
      // Get the uploaded file name or get error message.
      
      $uploadia->getUploadName(); // Returns uploaded file name;
-     $uploadia->getMessage(); // Returns error messages
 }
+     $uploadia->getMessage(); // Returns error messages
+
 ```
 
 # Contribution
